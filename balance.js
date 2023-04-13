@@ -56,15 +56,15 @@ let users = [
 ];
 
 const arrusersPhone = [];
-let UsersBalance = 0;
-const tt = users.forEach((num) => {
-  let bal = num.balance;
-  let pon = num.phone;
-  if (bal > 2000) {
-    arrusersPhone.push(pon);
+let summ = [];
+const mainArr = users.forEach((num) => {
+  const usersPhone = num.phone;
+
+  const usersBalance = num.balance.replace("$", "").replace(",", "");
+  summ += usersBalance;
+  if (usersBalance > 2000) {
+    arrusersPhone.push(usersPhone);
   }
 });
 console.log(arrusersPhone);
-console.log(tt);
-
-
+console.log(summ);
